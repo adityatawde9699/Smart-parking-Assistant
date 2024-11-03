@@ -465,79 +465,206 @@ video {
   margin-bottom: 8px;
 }
 
-/* ... (Existing CSS) ... */
+/* ... (Your Existing CSS) ... */
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Stack header elements vertically */
-        align-items: center; /* Center header content */
-        text-align: center; /* Center text within header */
-        padding: 15px;
+
+/* Responsive Design - Mobile First Approach */
+
+/* Default styles (apply to all screen sizes unless overridden) */
+#nav {
+    padding: 20px; /* Consistent padding */
+    display: flex;
+    align-items: center;
+}
+
+#nav img {
+    max-width: 100px; /* Prevent logo from becoming too large */
+    height: auto;
+}
+
+
+/* Media query for larger screens (tablet and desktop) - adjust breakpoint as needed */
+@media (min-width: 768px) {
+    #nav {
+      justify-content: flex-start; /* Align items to the left */
+      padding: 0 120px;  /* Original padding */
+      gap: 50px;
+    }
+    
+    #nav img {
+      height: 4.5vw; /* Original logo size */
+    }
+    
+    #nav h4 { /* Show navigation links on larger screens */
+        display: block;
+        font-size: 1.15vw;
+    }
+    #menu-icon {
+        display: none; /* Hide hamburger menu */
     }
 
-    header h1 {
-        font-size: 1.5rem;
-        margin-bottom: 10px; /* Add spacing below title */
-    }
-
-    header nav ul {
-        gap: 15px;
-        flex-direction: column; /* Stack navigation links */
-        margin-top: 10px;  /* Add spacing above navigation */
-    }
-
-    .hero {
-        padding: 60px 15px; /* Reduced padding for smaller screens */
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .social-icons {
-        display: flex;
-        justify-content: center; /* Center social icons */
-        margin-top: 20px; /* Add spacing above icons */
-    }
-
-
-    .skill-card {
-        width: 100%; /* Skill cards take full width */
-        max-width: 100%; /* Remove max-width limitation */
-        margin: 10px 0; /* Adjust margin */
-    }
-
-    .project-item {
-        width: 100%; /* Project items take full width */
-        max-width: 100%; /* Remove max-width limitation */
-        margin: 10px 0; /* Adjust margin */
-    }
-
-
-    #blog, #contact, #testimonials { /* Adjust sections for mobile */
-        width: 90%;  /* Slightly reduced width for better margins */
-        padding: 40px 15px;
-    }
-
-    form { /* Contact form adjustments */
-        width: 90%;
-    }
-
-    blockquote { /* Testimonial adjustments */
-        margin: 1rem auto; /* Center testimonials on smaller screens */
-        width: 90%; /* Adjust width for smaller screens */
+    #logo-mobile {
+        display: none; /* Hide the mobile logo */
     }
 }
 
-/* Even smaller screens (e.g., phones in portrait mode) */
-@media (max-width: 480px) {
-    .hero h2 {
-        font-size: 1.8rem; /* Slightly smaller heading */
+
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    #nav {
+        flex-direction: column; /* Stack navigation vertically */
+        align-items: center; /* Center content */
     }
 
-    .social-icons img {
-        width: 40px; /* Reduce social icon size */
-        height: 40px;
+    #nav h4 {
+        display: none; /* Hide by default */
+        font-size: 1.5rem;  /* Larger font size for touch */
+        margin: 10px 0;
+        text-align: center;
     }
-  }
+
+
+    #page1 h1 {
+        font-size: 2rem; 
+    }
+    #page1 p {
+        width: 90%; /* Text takes up more width on mobile */
+        font-size: 1.2rem;
+    }
+    #page1 #arrow { /* Hide arrow on mobile */
+        display: none;
+    }
+
+
+    #scroller { /* Disable scrolling text animation */
+        overflow: hidden;
+        white-space: normal;
+    }
+    #scroller-in {
+        animation: none; 
+    }
+    #scroller h4 {
+       font-size: 1.5rem;
+       margin: 10px 0;
+       display: block; /* Stack vertically */
+       -webkit-text-stroke: 0; 
+       color: #ffffff;
+    }
+
+    #about-us {
+        flex-direction: column; /* Stack vertically */
+        height: auto;
+        padding: 20px;
+    }
+    #about-us img {
+        max-width: 100%;  /* Make images responsive */
+        height: auto;
+        margin-bottom: 20px;
+    }
+    #about-us-in {
+        width: 100%; /* About Us content takes full width */
+        text-align: left;
+    }
+
+
+    #cards-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 20px;
+    }
+    .card {
+        width: 90%;
+        height: auto; /* Let card height adjust */
+    }
+    .card:hover {
+        transform: none;  /* Remove 3D hover effect */
+    }
+
+
+    #green-div {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    #green-div h4 {
+        font-size: 1.2rem;
+        width: 100%; /* Heading takes full width */
+    }
+    #green-div img {
+        display: none; /* Hide dots on mobile */
+    }
+
+
+    #page3 {
+        height: auto;  /* Let height adjust to content */
+        padding: 20px;
+    }
+    #page3 p {
+        font-size: 1.4rem;
+        width: 100%;
+    }
+    #page3 img { /* Adjust or hide quote marks as needed */
+        display: none;  
+    }
+
+
+    #page4 {
+        flex-direction: column; /* Stack vertically */
+        align-items: center;
+        height: auto;
+        padding: 20px; /* Add padding */
+    }
+    #page4 .elem {
+        width: 100%; 
+        margin-bottom: 20px;
+    }
+
+    #page4 h1 {
+        font-size: 2rem; 
+        position: static; /* Remove absolute positioning */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .elem img {
+        max-width: 100%; /* Responsive image */
+        height: auto;
+    }
+
+    #footer {
+      flex-direction: column;
+      align-items: center;
+      height: auto; 
+      padding: 20px;
+      gap: 20px;  
+      text-align: center; /* Center the footer text */
+    }
+    #footer img {  /* Hide the side dots */
+        display: none;
+    }
+    #f1, #f2, #f3, #f4 {  /* Full width for footer sections */
+        width: 100%;
+    }
+    #f2, #f3 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center content horizontally */
+        margin-bottom: 10px;
+    }
+
+    #f2 h3, #f3 h3 { /* Smaller font size */
+        font-size: 1.2rem;
+        margin: 5px; /* Adjust spacing */
+        white-space: normal; /* Allow text to wrap */
+
+    }
+
+    #f4 h4 {  /* Smaller font size and allow wrapping */
+        font-size: 1rem;
+        white-space: normal;
+    }
+
+
+      }
