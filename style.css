@@ -465,85 +465,79 @@ video {
   margin-bottom: 8px;
 }
 
+/* ... (Existing CSS) ... */
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  /* Navigation adjustments */
-  #nav {
-    padding: 0 20px;
-    gap: 15px;
-    justify-content: center; /* Center the navigation items */
-  }
-  #nav h4 {
-    font-size: 4vw; /* Adjust based on screen width */
-  }
-  
-  /* Header Text */
-  #page1 h1 {
-    font-size: 6vw; /* Smaller font for main heading */
-    width: 90%;
-  }
-  #page1 h2 {
-    font-size: 4vw;
-    margin-top: 10px;
-  }
-  #page1 p {
-    font-size: 3.5vw;
-    width: 90%; /* Reduce width for better readability */
-  }
-  
-  /* Card Section */
-  #cards-container {
-    flex-direction: column; /* Stack cards vertically */
-    gap: 20px; /* Reduce gap between cards */
-    padding: 10px;
-  }
-  .card {
-    width: 90%; /* Make cards full width */
-  }
-  
-  /* Sign-Up Section */
-  #green-div h4 {
-    font-size: 4vw;
-    padding: 0 10px;
-  }
-  
-  /* Footer Adjustments */
-  #footer {
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    align-items: center;
-  }
-  #footer img, #f1 img {
-    width: 50px; /* Make icons smaller for mobile */
-  }
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: center; /* Center header content */
+        text-align: center; /* Center text within header */
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px; /* Add spacing below title */
+    }
+
+    header nav ul {
+        gap: 15px;
+        flex-direction: column; /* Stack navigation links */
+        margin-top: 10px;  /* Add spacing above navigation */
+    }
+
+    .hero {
+        padding: 60px 15px; /* Reduced padding for smaller screens */
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center; /* Center social icons */
+        margin-top: 20px; /* Add spacing above icons */
+    }
+
+
+    .skill-card {
+        width: 100%; /* Skill cards take full width */
+        max-width: 100%; /* Remove max-width limitation */
+        margin: 10px 0; /* Adjust margin */
+    }
+
+    .project-item {
+        width: 100%; /* Project items take full width */
+        max-width: 100%; /* Remove max-width limitation */
+        margin: 10px 0; /* Adjust margin */
+    }
+
+
+    #blog, #contact, #testimonials { /* Adjust sections for mobile */
+        width: 90%;  /* Slightly reduced width for better margins */
+        padding: 40px 15px;
+    }
+
+    form { /* Contact form adjustments */
+        width: 90%;
+    }
+
+    blockquote { /* Testimonial adjustments */
+        margin: 1rem auto; /* Center testimonials on smaller screens */
+        width: 90%; /* Adjust width for smaller screens */
+    }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+/* Even smaller screens (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.8rem; /* Slightly smaller heading */
+    }
 
-#about-us img {
-  width: 40vw; /* Reduce image size for mobile */
-  margin: 10px 0; /* Add spacing */
-}
-
-video {
-  width: 100%; /* Full width for mobile */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  #cursor, #cursor-blur {
-    display: none; /* Hide cursor on mobile */
+    .social-icons img {
+        width: 40px; /* Reduce social icon size */
+        height: 40px;
+    }
   }
-}
-
-#page4 h1 {
-  font-size: 5vw;
-}
-
-.elem h2 {
-  font-size: 4vw;
-}
