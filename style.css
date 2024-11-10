@@ -63,6 +63,7 @@ body {
 }
 #nav img {
   height: 4.5vw;
+  
 }
 #nav h4 {
   text-transform: uppercase;
@@ -425,6 +426,7 @@ video {
   left: 0;
   height: 100%;
   z-index: 0;
+  
 }
 #f1 img {
   height: 100px;
@@ -465,206 +467,272 @@ video {
   margin-bottom: 8px;
 }
 
-/* ... (Your Existing CSS) ... */
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+  }
 
+  /* Cursor adjustments */
+  #cursor {
+    height: 15px;
+    width: 15px;
+  }
 
-/* Responsive Design - Mobile First Approach */
+  #cursor-blur {
+    height: 250px;
+    width: 250px;
+    filter: blur(50px);
+  }
 
-/* Default styles (apply to all screen sizes unless overridden) */
-#nav {
-    padding: 20px; /* Consistent padding */
+  /* Navigation */
+  #nav {
+    height: 100px;
+    width: 100%;  
     display: flex;
     align-items: center;
-}
+    padding: 0 2px;
+    gap: 7.5px;
+    position: fixed;
+    justify-content: center;
+    z-index: 999;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+  
+  }
 
-#nav img {
-    max-width: 100px; /* Prevent logo from becoming too large */
+  #nav img {
+    height: 8vw;
+  }
+
+  #nav h4 {
+    font-size: 3.5vw;
+  }
+
+  /* Page 1 adjustments */
+  #page1 h1 {
+    font-size: 12vw;
+  }
+
+  #page1 h2 {
+    font-size: 5vw;
+  }
+
+  #page1 p {
+    font-size: 3.5vw;
+    width: 80%;
+  }
+
+  #page1 #arrow {
+    height: 120px;
+    width: 120px;
+    left: 10px;
+    bottom: 10px;
+  }
+
+  /* About Us Section */
+  #about-us {
     height: auto;
+    padding: 0 10px;
+    flex-direction: column;
+  }
+
+  #about-us img {
+    height: 120px;
+    width: 120px;
+  }
+
+  #about-us-in {
+    width: 100%;
+    text-align: center;
+  }
+
+  #about-us-in h3 {
+    font-size: 7vw;
+    margin-bottom: 20px;
+  }
+
+  #about-us-in p {
+    font-size: 4vw;
+  }
+
+
+  /* Card Container */
+  #cards-container {
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .overlay h4 {
+    font-size: 6vw;
+  }
+
+  .overlay p {
+    font-size: 3.5vw;
+  }
+
+  /* Green div section */
+  #green-div h4 {
+    font-size: 5vw;
+    width: 90%;
+    text-align: center;
+    line-height: normal;
+  }
+
+#page3 {
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+
+#page3 #colon1 {
+  left: 5%;
+  top: 20%;
+}
+
+#page3 > p {
+  font-size: 25px;
+  font-weight: 900;
+  width: 85%;
+  line-height: 35px;
+  text-align: center;
+}
+
+#page3 #colon2 {
+  bottom: 20%;
+  right: 5%;
+}
+
+#page3 img {
+    position: absolute;
+    height: 35px;
+}
+
+#page4 {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  position: relative;
+  flex-wrap: wrap;
+  align-content: center;
+}
+#page4 h1 {
+  font-size: 5.4vw;
+  position: absolute;
+  top: -15%;
+  font-weight: 900;
+  font-family: sans-serif;
+  color: #000;
+  -webkit-text-stroke: 2px #fff;
+}
+.elem {
+  height: 65%;
+  width: 45%;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+.elem h2 {
+  height: 75%;
+  width: 100%;
+  border-radius: 5%;
+  background-color: #95c11e;
+  display: flex;
+  color: #000;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 0.5s;
+  font-size: 2vw;
+  position: absolute;
+  z-index: 10;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.elem img {
+  height: 65%;
+  object-fit: cover;
+  transition: all ease 0.5s;
+  scale: 1.1;
 }
 
 
-/* Media query for larger screens (tablet and desktop) - adjust breakpoint as needed */
-@media (min-width: 768px) {
-    #nav {
-      justify-content: flex-start; /* Align items to the left */
-      padding: 0 120px;  /* Original padding */
-      gap: 50px;
-    }
-    
-    #nav img {
-      height: 4.5vw; /* Original logo size */
-    }
-    
-    #nav h4 { /* Show navigation links on larger screens */
-        display: block;
-        font-size: 1.15vw;
-    }
-    #menu-icon {
-        display: none; /* Hide hamburger menu */
-    }
+  /* Footer adjustments */
+  #footer {
+    height: 70vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #0c8f31 0%, #88a737 65%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5vw;
+    padding: 20px 80px;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 
-    #logo-mobile {
-        display: none; /* Hide the mobile logo */
-    }
+  #footer > img {
+    position: absolute;
+    left: 0;
+    height: 50%;
+    z-index: 0;
+    
+  }
+  #f1 img {
+    height: 80px;
+  }
+  #f1,
+  #f2,
+  #f3,
+  #f4 {
+    width: fit-content;
+    position: relative;
+    z-index: 99;
+    background-color: transparent;
+  }
+  #f2 h3 {
+    font-size: 3.6vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  #f3 h3 {
+    font-size: 3.6vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  #f4 h4 {
+    font-size: 2.5vw;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    line-height: 10px;
+    margin-bottom: 2px;
+  }
+  
+
 }
-
-
-
-/* Mobile Styles */
-@media (max-width: 767px) {
-    #nav {
-        flex-direction: column; /* Stack navigation vertically */
-        align-items: center; /* Center content */
-    }
-
-    #nav h4 {
-        display: none; /* Hide by default */
-        font-size: 1.5rem;  /* Larger font size for touch */
-        margin: 10px 0;
-        text-align: center;
-    }
-
-
-    #page1 h1 {
-        font-size: 2rem; 
-    }
-    #page1 p {
-        width: 90%; /* Text takes up more width on mobile */
-        font-size: 1.2rem;
-    }
-    #page1 #arrow { /* Hide arrow on mobile */
-        display: none;
-    }
-
-
-    #scroller { /* Disable scrolling text animation */
-        overflow: hidden;
-        white-space: normal;
-    }
-    #scroller-in {
-        animation: none; 
-    }
-    #scroller h4 {
-       font-size: 1.5rem;
-       margin: 10px 0;
-       display: block; /* Stack vertically */
-       -webkit-text-stroke: 0; 
-       color: #ffffff;
-    }
-
-    #about-us {
-        flex-direction: column; /* Stack vertically */
-        height: auto;
-        padding: 20px;
-    }
-    #about-us img {
-        max-width: 100%;  /* Make images responsive */
-        height: auto;
-        margin-bottom: 20px;
-    }
-    #about-us-in {
-        width: 100%; /* About Us content takes full width */
-        text-align: left;
-    }
-
-
-    #cards-container {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        gap: 20px;
-    }
-    .card {
-        width: 90%;
-        height: auto; /* Let card height adjust */
-    }
-    .card:hover {
-        transform: none;  /* Remove 3D hover effect */
-    }
-
-
-    #green-div {
-        flex-direction: column; /* Stack elements vertically */
-        height: auto;
-        padding: 20px;
-        text-align: center;
-    }
-    #green-div h4 {
-        font-size: 1.2rem;
-        width: 100%; /* Heading takes full width */
-    }
-    #green-div img {
-        display: none; /* Hide dots on mobile */
-    }
-
-
-    #page3 {
-        height: auto;  /* Let height adjust to content */
-        padding: 20px;
-    }
-    #page3 p {
-        font-size: 1.4rem;
-        width: 100%;
-    }
-    #page3 img { /* Adjust or hide quote marks as needed */
-        display: none;  
-    }
-
-
-    #page4 {
-        flex-direction: column; /* Stack vertically */
-        align-items: center;
-        height: auto;
-        padding: 20px; /* Add padding */
-    }
-    #page4 .elem {
-        width: 100%; 
-        margin-bottom: 20px;
-    }
-
-    #page4 h1 {
-        font-size: 2rem; 
-        position: static; /* Remove absolute positioning */
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .elem img {
-        max-width: 100%; /* Responsive image */
-        height: auto;
-    }
-
-    #footer {
-      flex-direction: column;
-      align-items: center;
-      height: auto; 
-      padding: 20px;
-      gap: 20px;  
-      text-align: center; /* Center the footer text */
-    }
-    #footer img {  /* Hide the side dots */
-        display: none;
-    }
-    #f1, #f2, #f3, #f4 {  /* Full width for footer sections */
-        width: 100%;
-    }
-    #f2, #f3 {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* Center content horizontally */
-        margin-bottom: 10px;
-    }
-
-    #f2 h3, #f3 h3 { /* Smaller font size */
-        font-size: 1.2rem;
-        margin: 5px; /* Adjust spacing */
-        white-space: normal; /* Allow text to wrap */
-
-    }
-
-    #f4 h4 {  /* Smaller font size and allow wrapping */
-        font-size: 1rem;
-        white-space: normal;
-    }
-
-
-      }
