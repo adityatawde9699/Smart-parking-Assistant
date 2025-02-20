@@ -1,4 +1,5 @@
 # Smart Parking Assistance Webpage
+![image](https://github.com/user-attachments/assets/175c9e4b-53c9-4d89-bd89-03fae236e4c4)
 
 A modern, user-friendly webpage for the **Smart Parking Assistance** system. This project leverages real-time parking slot availability, secure payments, and convenient reservations, designed to streamline the parking experience.
 
