@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart Parking Assistance</title>
     <meta name="description" content="A modern solution for efficient and smart parking management." />
-
-    <link rel="shortcut icon" href="C:\Users\ASUS\Downloads\vs code\.vscode\Webpages\SmartParking\DALL·E 2024-10-23 01.36.34 - A modern, circle-shaped logo design for a 'Smart Parking Assistance' project. The design features a minimalist car icon parked inside a parking slot w.webp" type="image/x-icon" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <div class="video-container">
+      <video autoplay loop muted>
+        <source src="parking-video.webm" type="video/webm">
+      </video>
+    </div>
     <div id="nav" role="navigation" aria-label="Main Navigation">
-      <img src="https://img.icons8.com/?size=100&id=22546&format=png&color=000000" alt="Smart Parking Logo" />
+      <a href="https://adityatawde9699.github.io/Smart-parking-Assistant/" class="logo z-50">
+        <img width="98" height="74" src="logo.png" class="attachment-full size-full" alt="SFG Logo" decoding="async" loading="eager">
+      </a>
       <h4 aria-label="Navigate to Home">Home</h4>
       <h4 aria-label="View Parking Slots">Parking Slots</h4>
       <h4 aria-label="Manage Reservations">Reservations</h4>
@@ -112,35 +118,60 @@
         
         <div class="elem">
           <h2>Reserve Now</h2>
-          <img src="path_to_parking_image4.jpg" alt="Parking Image 4" />
+          <img src="C:\Users\ASUS\Downloads\vs code\.vscode\Webpages\SmartParking\area 2.jpg" alt="Parking Image 4" />
         </div>
         
       </div>
 
-      <div id="footer">
-        <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg" alt="" />
-        <div id="f1">
-          <img src="https://img.icons8.com/?size=100&id=22546&format=png&color=000000" alt="Smart Parking Logo" />
-        </div>
-        <div id="f2">
-          <h3>Real-Time Parking</h3>
-          <h3>Secure Payments</h3>
-          <h3>Easy Reservations</h3>
-        </div>
-        <div id="f3">
-          <h3>Contact Us</h3>
-          <h3>Support</h3>
-          <h3>FAQs</h3>
-        </div>
-        <div id="f4">
-          <h4>
-            <i class="ri-map-pin-line" aria-hidden="true"></i> Smart Parking, City, Country<br />
-            <i class="ri-mail-line" aria-hidden="true"></i> Email: support@smartparking.com<br />
-            <i class="ri-phone-line" aria-hidden="true"></i> Phone: +123456789<br />
-          </h4>
-        </div>
+      <footer id="footer" class="footer" role="contentinfo">
+        <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg" alt="" class="footer-dots" />
         
-      </div>
+        <div class="footer-content">
+          <div id="f1" class="footer-logo">
+        <img src="C:\Users\ASUS\Downloads\vs code\.vscode\Webpages\SmartParking\logo_transparent.png" alt="Smart Parking Logo" />
+        <p>Making parking smarter, easier, and more efficient for everyone.</p>
+          </div>
+
+          <div id="f2" class="footer-services">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="#real-time">Real-Time Parking</a></li>
+          <li><a href="#payments">Secure Payments</a></li>
+          <li><a href="#reservations">Easy Reservations</a></li>
+          <li><a href="#mobile-app">Mobile App</a></li>
+        </ul>
+          </div>
+
+          <div id="f3" class="footer-support">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#support">Help Center</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+        </ul>
+          </div>
+
+          <div id="f4" class="footer-contact">
+        <h3>Contact Info</h3>
+        <address>
+          <p><i class="ri-map-pin-line" aria-hidden="true"></i> Smart Parking, City, Country</p>
+          <p><i class="ri-mail-line" aria-hidden="true"></i> <a href="mailto:support@smartparking.com">support@smartparking.com</a></p>
+          <p><i class="ri-phone-line" aria-hidden="true"></i> <a href="tel:+123456789">+123 456 789</a></p>
+        </address>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+        </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 Smart Parking. All rights reserved.</p>
+        </div>
+      </footer>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
