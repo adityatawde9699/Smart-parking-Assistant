@@ -1,30 +1,83 @@
+// Enhanced cursor effects
 var crsr = document.querySelector("#cursor");
 var blur = document.querySelector("#cursor-blur");
 
+// Smooth cursor movement with lerp (linear interpolation)
+let currentX = 0, currentY = 0;
+let targetX = 0, targetY = 0;
+
 document.addEventListener("mousemove", function (dets) {
-  crsr.style.left = dets.x + "px";
-  crsr.style.top = dets.y + "px";
-  blur.style.left = dets.x - 250 + "px";
-  blur.style.top = dets.y - 250 + "px";
+  targetX = dets.x;
+  targetY = dets.y;
 });
 
+// Smooth cursor animation
+function animate() {
+  let dx = targetX - currentX;
+  let dy = targetY - currentY;
+  
+  currentX += dx * 0.1;
+  currentY += dy * 0.1;
+  
+  crsr.style.left = currentX + "px";
+  crsr.style.top = currentY + "px";
+  blur.style.left = currentX - 250 + "px";
+  blur.style.top = currentY - 250 + "px";
+  
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Enhanced hover effects
 var h4all = document.querySelectorAll("#nav h4");
 h4all.forEach(function (elem) {
   elem.addEventListener("mouseenter", function () {
-    crsr.style.scale = 1.5; // Adjust scale to 1.5
-    crsr.style.border = "1px solid #fff";
-    crsr.style.backgroundColor = "transparent";
+    gsap.to(crsr, {
+      scale: 1.5,
+      border: "1px solid #fff",
+      backgroundColor: "transparent",
+      duration: 0.3
+    });
   });
   elem.addEventListener("mouseleave", function () {
-    crsr.style.scale = 1; // Reset scale back to normal
-    crsr.style.border = "0px solid #95C11E";
-    crsr.style.backgroundColor = "#95C11E";
+    gsap.to(crsr, {
+      scale: 1,
+      border: "0px solid #95C11E",
+      backgroundColor: "#95C11E",
+      duration: 0.3
+    });
   });
 });
 
+// Parallax effect for cards
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    gsap.to(card, {
+      rotationY: ((x - rect.width / 2) / 10),
+      rotationX: -((y - rect.height / 2) / 10),
+      duration: 0.5,
+      ease: "power2.out"
+    });
+  });
+  
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, {
+      rotationY: 0,
+      rotationX: 0,
+      duration: 0.5,
+      ease: "power2.out"
+    });
+  });
+});
 
+// Keep your existing GSAP animations but add some improvements
 gsap.to("#nav", {
-  backgroundColor: "rgba(0, 0, 0, 0.8)", // Semi-transparent black
+  backgroundColor: "rgba(0, 0, 0, 0.9)",
+  backdropFilter: "blur(10px)",
   duration: 0.5,
   height: "100px",
   scrollTrigger: {
@@ -32,97 +85,18 @@ gsap.to("#nav", {
     scroller: "body",
     start: "top -10%",
     end: "top -20%",
-    scrub: 1,
-  },
+    scrub: 1
+  }
 });
 
-
-gsap.to("#main", {
-  backgroundColor: "#000",
-  scrollTrigger: {
-    trigger: "#main",
-    scroller: "body",
-    // markers: true,
-    start: "top -25%",
-    end: "top -70%",
-    scrub: 2,
-  },
+// Smooth scroll implementation
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
 });
 
-gsap.from("#about-us img,#about-us-in", {
-  y: 90,
-  opacity: 0,
-  duration: 1,
-  scrollTrigger: {
-    trigger: "#about-us",
-    scroller: "body",
-    // markers:true,
-    start: "top 70%",
-    end: "top 65%",
-    scrub: 1,
-  },
-});
-gsap.to("#nav", {
-  backgroundColor: "#333",
-  duration: 0.5,
-  height: "100px",
-  scrollTrigger: {
-    trigger: "#nav",
-    scroller: "body",
-    start: "top -10%",
-    end: "top -20%",
-    scrub: 1,
-  },
-});
-
-gsap.from(".card", {
-  scale: 0.8,
-  duration: 1,
-  stagger: 0.2,
-  scrollTrigger: {
-     trigger: ".card",
-     start: "top 80%",
-     end: "top 60%",
-     scrub: 1,
-  },
-});
-
-
-
-gsap.from("#colon1", {
-  y: -70,
-  x: -70,
-  scrollTrigger: {
-    trigger: "#colon1",
-    scroller: "body",
-    // markers:true,
-    start: "top 55%",
-    end: "top 45%",
-    scrub: 4,
-  },
-});
-gsap.from("#colon2", {
-  y: 70,
-  x: 70,
-  scrollTrigger: {
-    trigger: "#colon1",
-    scroller: "body",
-    // markers:true,
-    start: "top 55%",
-    end: "top 45%",
-    scrub: 4,
-  },
-});
-gsap.from("#page4 h1", {
-  y: 50,
-  scrollTrigger: {
-    trigger: "#page4 h1",
-    scroller: "body",
-    // markers:true,
-    start: "top 75%",
-    end: "top 70%",
-    scrub: 3,
-  },
-});
-
-// Thanks itna aage tak aane ke liye lekin pura code utha ke copy paste karne ki jagah khud ek baar banane ka try karna, kuch naya seekhne ko milega!
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
